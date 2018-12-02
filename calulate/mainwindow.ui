@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>635</width>
-    <height>318</height>
+    <width>640</width>
+    <height>293</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
      <string>计算</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -41,10 +41,27 @@
       <widget class="QLineEdit" name="firstText"/>
      </item>
      <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>+</string>
-       </property>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>+</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>x</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>/</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>
@@ -68,8 +85,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>635</width>
-     <height>26</height>
+     <width>640</width>
+     <height>23</height>
     </rect>
    </property>
   </widget>

@@ -20,10 +20,47 @@ void MainWindow::on_caltButtion_clicked()
     bool ok;
     int ft = first.toInt(&ok, 10);
     int sec = second.toInt(&ok, 10);
-    int res = ft + sec;
+    int res = 0;
     //QString str;
     //str.setNum(res);
     //ui->reultText->setText(str);
+    switch((int)ui->comboBox->currentIndex())
+    {
+    case 0:  //+
+        res = ft + sec;
+        break;
+    case 1: //-
+        res = ft - sec;
+        break;
+    case 2: //*
+        res = ft * sec;
+        break;
+    case 3: ///
+        if(sec == 0)
+        {
+            QMessageBox::warning(this,"error input","second cannot be zero");
+            break;
+        }
+        res = ft / sec;
+        break;
+    default:
+        break;
+    }
     ui->reultText->setText(QString::number(res));
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
