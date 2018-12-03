@@ -7,10 +7,21 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Untitled notepad  ----leo create");
+    //file  slot
     QObject::connect(ui->newAction, SIGNAL(triggered()), this, SLOT(newFileSlot()));
     QObject::connect(ui->openAction, SIGNAL(triggered()), this, SLOT(openFileSlot()));
     QObject::connect(ui->saveAction, SIGNAL(triggered()), this, SLOT(saveFileSlot()));
     QObject::connect(ui->saveAsAction, SIGNAL(triggered()), this, SLOT(saveAsFileSlot()));
+
+    //edit slot
+    QObject::connect(ui->redoAction, SIGNAL(triggered()), ui->textEdit, SLOT(undo()));
+    QObject::connect(ui->cutAction, SIGNAL(triggered()), ui->textEdit, SLOT(cut()));
+    QObject::connect(ui->copyAction, SIGNAL(triggered()), ui->textEdit, SLOT(copy()));
+    QObject::connect(ui->seleteAllAction, SIGNAL(triggered()), ui->textEdit, SLOT(selectAll()));
+    QObject::connect(ui->colorAction, SIGNAL(triggered()), this, SLOT(setColorSlot()));
+    QObject::connect(ui->fontAction, SIGNAL(triggered()), this, SLOT(setFontSlot()));
+    QObject::connect(ui->dateAction, SIGNAL(triggered()), this, SLOT(setDateTimeLocalSlot()));
+
 }
 
 MainWindow::~MainWindow()
@@ -114,3 +125,51 @@ void MainWindow::printFileSlot()
 {
     //QPrintDialog
 }
+
+void MainWindow::setFontSlot()
+{
+    bool ok;
+    QFont font = QFontDialog::getFont(&ok, this);
+    if (ok)
+    {
+        ui->textEdit->setFont(font);
+    } else
+    {
+        QMessageBox::information(this, "Error message", "Error set font!");
+    }
+}
+
+void MainWindow::setColorSlot()
+{
+    QColor color;
+    color = QColorDialog::getColor(Qt::green, this);
+
+    if (color.isValid())
+    {
+        ui->textEdit->setTextColor(color);
+    }
+    else
+    {
+        QMessageBox::information(this, "Error message", "Error set color");
+    }
+}
+
+void MainWindow::setDateTimeLocalSlot()
+{
+    QDateTime current = QDateTime::currentDateTime();
+    QString time = current.toString("yyyy-M-dd hh:mm:ss");
+    ui->textEdit->append(time);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -45,13 +45,17 @@
     <property name="title">
      <string>编辑(&amp;E)</string>
     </property>
-    <addaction name="actionRedo_R"/>
+    <addaction name="redoAction"/>
     <addaction name="separator"/>
-    <addaction name="actionCut_T"/>
-    <addaction name="actionCopy_C"/>
-    <addaction name="actionPaste_P"/>
-    <addaction name="actionDelete_D"/>
+    <addaction name="cutAction"/>
+    <addaction name="copyAction"/>
+    <addaction name="pasteAction"/>
+    <addaction name="seleteAllAction"/>
     <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="dateAction"/>
+    <addaction name="fontAction"/>
+    <addaction name="colorAction"/>
    </widget>
    <addaction name="menu_F"/>
    <addaction name="menu_E"/>
@@ -98,29 +102,47 @@
     <string>quit(&amp;Q)</string>
    </property>
   </action>
-  <action name="actionRedo_R">
+  <action name="redoAction">
    <property name="text">
     <string>redo(&amp;R)</string>
    </property>
   </action>
-  <action name="actionCut_T">
+  <action name="cutAction">
    <property name="text">
     <string>cut(&amp;T)</string>
    </property>
   </action>
-  <action name="actionCopy_C">
+  <action name="copyAction">
    <property name="text">
     <string>copy(&amp;C)</string>
    </property>
   </action>
-  <action name="actionPaste_P">
+  <action name="pasteAction">
    <property name="text">
     <string>paste(&amp;P)</string>
    </property>
   </action>
-  <action name="actionDelete_D">
+  <action name="seleteAllAction">
    <property name="text">
-    <string>delete(&amp;D)</string>
+    <string>全选(&amp;A)</string>
+   </property>
+  </action>
+  <action name="dateAction">
+   <property name="text">
+    <string>日期(&amp;D)</string>
+   </property>
+   <property name="toolTip">
+    <string>date</string>
+   </property>
+  </action>
+  <action name="fontAction">
+   <property name="text">
+    <string>字体(&amp;F)</string>
+   </property>
+  </action>
+  <action name="colorAction">
+   <property name="text">
+    <string>颜色(&amp;C)</string>
    </property>
   </action>
  </widget>

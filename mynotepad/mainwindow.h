@@ -12,6 +12,12 @@
 #include <QTextStream>
 
 
+#include <QFont>
+#include <QFontDialog>
+#include <QColorDialog>
+#include <QColor>
+#include <QDateTime>
+
 namespace Ui {
 class MainWindow;
 }
@@ -33,6 +39,9 @@ private slots:
     void saveFileSlot();
     void saveAsFileSlot();
     void printFileSlot();
+    void setFontSlot();
+    void setColorSlot();
+    void setDateTimeLocalSlot();
 
 };
 
