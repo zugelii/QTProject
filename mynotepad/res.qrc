@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/new/ICON">
+        <file>image/AlanTuringNotebook_EN-US7743633207_1920x1080.jpg</file>
+        <file>image/BonifacioCorsica_ZH-CN12276076394_1920x1080.jpg</file>
+        <file>image/BowSnow_ZH-CN10193462171_1920x1080.jpg</file>
+        <file>image/BrazilianPine_ZH-CN10573180887_1920x1080.jpg</file>
+        <file>image/BrokenObelisk_ZH-CN11618156016_1920x1080.jpg</file>
+        <file>image/BudaCastle_ZH-CN8740088800_1920x1080.jpg</file>
+        <file>image/BulgariaPerseids_ZH-CN11638911564_1920x1080.jpg</file>
+        <file>laoban.gif</file>
+    </qresource>
+</RCC>

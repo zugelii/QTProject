@@ -22,6 +22,11 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->fontAction, SIGNAL(triggered()), this, SLOT(setFontSlot()));
     QObject::connect(ui->dateAction, SIGNAL(triggered()), this, SLOT(setDateTimeLocalSlot()));
 
+    //help slot
+    QObject::connect(ui->aboutQTAction, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+    QObject::connect(ui->webAction, SIGNAL(triggered()), this, SLOT(aboutWebsiteSlot()));
+    QObject::connect(ui->aboutSoftwareAction, SIGNAL(triggered()), this, SLOT(aboutSofewareSlot()));
+
 }
 
 MainWindow::~MainWindow()
@@ -162,6 +167,57 @@ void MainWindow::setDateTimeLocalSlot()
 }
 
 
+void MainWindow::aboutWebsiteSlot()
+{
+    QDesktopServices::openUrl(QUrl("http://google.com"));
+
+}
+
+void MainWindow::aboutSofewareSlot()
+{
+    about *dialog = new about;
+    //dialog->show();  //非模态对话框
+    dialog->exec(); //模态对话框
+
+}
+
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+//    event->ignore();
+ //   qDebug() <<"close event";
+    if(ui->textEdit->document()->isModified())
+    {
+        QMessageBox msgBox;
+        msgBox.setText("The document has been modified.");
+        msgBox.setInformativeText("Do you want to save your changes?");
+        msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+        msgBox.setDefaultButton(QMessageBox::Save);
+        int ret = msgBox.exec();
+        switch (ret) {
+          case QMessageBox::Save:
+              // Save was clicked
+                this->saveFileSlot();
+              break;
+          case QMessageBox::Discard:
+              // Don't Save was clicked
+                event->accept();
+              break;
+          case QMessageBox::Cancel:
+              // Cancel was clicked
+                event->ignore();
+              break;
+          default:
+              // should never be reached
+              break;
+        }
+    }
+    else
+    {
+        event->accept();
+        qDebug()<< "没有改变";
+    }
+}
 
 
 

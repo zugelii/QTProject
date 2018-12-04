@@ -16,7 +16,12 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTextEdit" name="textEdit"/>
+     <widget class="QTextEdit" name="textEdit">
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/new/ICON/image/AlanTuringNotebook_EN-US7743633207_1920x1080.jpg);
+background-image: url(:/new/ICON/image/BonifacioCorsica_ZH-CN12276076394_1920x1080.jpg);</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -57,8 +62,17 @@
     <addaction name="fontAction"/>
     <addaction name="colorAction"/>
    </widget>
+   <widget class="QMenu" name="menu_H">
+    <property name="title">
+     <string>帮助(&amp;H)</string>
+    </property>
+    <addaction name="aboutQTAction"/>
+    <addaction name="webAction"/>
+    <addaction name="aboutSoftwareAction"/>
+   </widget>
    <addaction name="menu_F"/>
    <addaction name="menu_E"/>
+   <addaction name="menu_H"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -143,6 +157,21 @@
   <action name="colorAction">
    <property name="text">
     <string>颜色(&amp;C)</string>
+   </property>
+  </action>
+  <action name="aboutQTAction">
+   <property name="text">
+    <string>关于QT(&amp;Q)</string>
+   </property>
+  </action>
+  <action name="webAction">
+   <property name="text">
+    <string>关于官网(@W)</string>
+   </property>
+  </action>
+  <action name="aboutSoftwareAction">
+   <property name="text">
+    <string>关于软件(&amp;S)</string>
    </property>
   </action>
  </widget>
